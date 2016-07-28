@@ -17,6 +17,7 @@
      if((time() - filemtime($file)) > 86400){
        require_once('files/APIKEY.php');
        require_once("logs/log.php");
+       //make sure you have put your dev key in the APIKEY.php file in the Files folder
        $json = @file_get_contents("https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion?champData=lore,spells&api_key=".$key) or die("API ERROR!");
      }else{
            $json = @file_get_contents("characters.json");
